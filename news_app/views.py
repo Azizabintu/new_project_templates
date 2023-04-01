@@ -15,4 +15,4 @@ def news_detail(request, id):
     context = {
         "news": news
     }
-    return render(request, 'news/news_detail.html', context)
+    return render(request, 'news/news_detail.htmls', context)
