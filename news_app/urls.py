@@ -1,11 +1,7 @@
-from django.conf.urls.static import static
-from django.contrib import admin
 from django.urls import path
-from config import settings
+from .views import news_list,news_detail
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('all/', news_list, name="all_news_list"),
+    path('<int:id>/', news_detail, name="news_detail_page"),
 ]
-
-if settings.DEBUG:
-    urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
